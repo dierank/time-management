@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rank.newnewnew.DeveloperExitsActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="361dp"
+        android:layout_height="428dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:text="Login"
+            android:onClick="startLogin"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="74dp" />
+
+        <Button
+            android:id="@+id/buttonPrinc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="6"
+            android:layout_row="0"
+            android:text="Principal"
+            android:onClick="startPrincipal"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/buttonHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="Histórico"
+            android:onClick="startHistorico"
+            tools:layout_editor_absoluteX="132dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nova Atividade"
+            android:onClick="startNovaAtividade"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="136dp" />
+
+        <Button
+            android:id="@+id/buttonLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lista"
+            android:onClick="listaActivity"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Developer Exits"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="132dp" />
+
+</android.support.constraint.ConstraintLayout>
