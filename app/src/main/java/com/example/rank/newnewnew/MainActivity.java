@@ -1,5 +1,6 @@
 package com.example.rank.newnewnew;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
@@ -7,6 +8,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.example.rank.newnewnew.adapters.AbasAdapter;
 import com.example.rank.newnewnew.extras.SlidingTabLayout;
@@ -28,25 +33,56 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Inicializa ViewPager e carrega as tabs
         initViewPager();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_teste, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.menu_configuracoes:
+                startConfiguracoes();
+                return true;
+            case R.id.menu_sair:
+                startLogin();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    public void startConfiguracoes()
+    {
+        Intent intent = new Intent(this, ConfiguracoesActivity.class);
+        startActivity(intent);
+    }
+    public void startLogin()
+    {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
     private void initViewPager() {
-        // Instancia o ViewPager a partir do resource adicionado no layout activity_main.xml
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         if (viewPager != null) {
             setupViewPager(viewPager);
         }
 
-        // Da mesma forma o SlidingTabLayout, também incluso no layout activity_main.xml
         SlidingTabLayout tabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
-        //noinspection ConstantConditions
         tabLayout.setSelectedIndicatorColors(Color.WHITE);
         tabLayout.setTextColorResId(R.color.tabs_text_color);
 
-        // Adicionando um callback para disparar eventos ao realizar ações com as abas.
         tabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener()  {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -64,13 +100,14 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setViewPager(viewPager);
     }
 
+
+
     private void setupViewPager(ViewPager viewPager) {
-        // Instancia o adapter para adicionar cada fragment que será construído em cada aba.
         AbasAdapter adapter = new AbasAdapter(getSupportFragmentManager());
         adapter.adicionar(new EstatisticasFragment(), "Principal");
-        adapter.adicionar(new CalendarioFragment(), "Calendário");
-        adapter.adicionar(new CategoriasFragment(), "Categorias");
         adapter.adicionar(new EventosFragment(), "Eventos");
+        adapter.adicionar(new CategoriasFragment(), "Categorias");
+        adapter.adicionar(new CalendarioFragment(), "Calendário");
         viewPager.setAdapter(adapter);
     }
 }

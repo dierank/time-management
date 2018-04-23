@@ -1,8 +1,15 @@
 package com.example.rank.newnewnew;
 
-/**
- * Created by rank on 4/23/18.
- */
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class NovoEventoActivity {
+
+public class NovoEventoActivity extends AppCompatActivity
+{
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_novoevento);
+    }
 }
