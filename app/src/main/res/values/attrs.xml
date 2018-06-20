@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoginDuasCoresView">
+        <attr name="cimaCor" format="color"/>
+        <attr name="baixoCor" format="color"/>
+        <attr name="alturaSeparaCorPorcentagem" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -4,97 +4,113 @@
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlueDois"
     android:gravity="center_horizontal"
     tools:context="com.example.rank.newnewnew.LoginActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <!-- Login progress -->
-
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout"
+    <com.example.rank.newnewnew.Views.LoginView
+        android:id="@+id/loginView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <AutoCompleteTextView
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/email_sign_in_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
-            android:hint="Senha"
-            android:imeActionId="6"
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:id="@+id/email_sign_in_button"
-        style="?android:textAppearanceSmall"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="154dp"
-        android:text="Entrar"
-        android:textStyle="bold"
+        android:layout_height="0dp"
+        android:background="@color/colorBlueDois"
+        app:alturaSeparaCorPorcentagem="45"
+        app:baixoCor="@color/colorBlueDois"
+        app:cimaCor="#FFFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="90dp"
+    <Button
+        android:id="@+id/botaoLogin"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="43dp"
-        android:layout_marginTop="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        android:layout_alignTop="@+id/checkBoxLogin"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="30dp"
+        android:layout_toStartOf="@+id/checkBoxLogin"
+        android:background="@drawable/botao"
+        android:shadowColor="@color/colorWhite"
+        android:text="@string/botao_login"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRegistrarLogin"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editSenhaLogin" />
+
+    <EditText
+        android:id="@+id/editEmailLogin"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@+id/editSenhaLogin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="269dp"
+        android:background="@drawable/bg_botao"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editSenhaLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editSenhaLogin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@+id/checkBoxLogin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/bg_botao"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/hint_senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/botaoLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmailLogin" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewRegistrarLogin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:buttonTint="@color/colorWhite"
+        android:text="@string/checkbox_login"
+        android:textColor="@color/colorWhite"
+        android:textColorLink="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/botaoLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botaoLogin" />
+
+    <TextView
+        android:id="@+id/textViewRegistrarLogin"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editEmailLogin"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="66dp"
+        android:shadowColor="@color/colorWhite"
+        android:text="@string/textView_registrar_login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/botaoLogin"
+        app:layout_constraintTop_toBottomOf="@+id/botaoLogin" />
 
 
 </android.support.constraint.ConstraintLayout>

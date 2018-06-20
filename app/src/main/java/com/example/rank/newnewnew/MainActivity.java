@@ -20,13 +20,11 @@ import com.example.rank.newnewnew.fragments.CategoriasFragment;
 import com.example.rank.newnewnew.fragments.EstatisticasFragment;
 import com.example.rank.newnewnew.fragments.EventosFragment;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,20 +33,16 @@ public class MainActivity extends AppCompatActivity
 
         initViewPager();
     }
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_teste, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(final MenuItem item)
-    {
-        switch (item.getItemId())
-        {
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.menu_configuracoes:
                 startConfiguracoes();
                 return true;
@@ -59,19 +53,14 @@ public class MainActivity extends AppCompatActivity
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-    public void startConfiguracoes()
-    {
+    public void startConfiguracoes() {
         Intent intent = new Intent(this, ConfiguracoesActivity.class);
         startActivity(intent);
     }
-    public void startLogin()
-    {
+    public void startLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
-
     private void initViewPager() {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
@@ -99,8 +88,6 @@ public class MainActivity extends AppCompatActivity
         });
         tabLayout.setViewPager(viewPager);
     }
-
-
 
     private void setupViewPager(ViewPager viewPager) {
         AbasAdapter adapter = new AbasAdapter(getSupportFragmentManager());

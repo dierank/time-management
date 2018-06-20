@@ -3,6 +3,21 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="tabs_text_color">#FFFFFF</color>
+    <color name="title_text_color">#FFFFFF</color>
 
-    <color name="tabs_text_color">#FFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#69AEFF</color>
+    <color name="colorDarkBlue">#627DE8</color>
+    <color name="colorBlueUm">#0084FF</color>
+    <color name="colorBlueDois">#30C0FC</color>
+    <color name="colorPurple">#8859E8</color>
+    <color name="colorPink">#C369FF</color>
+    <color name="colorRed">#B00020</color>
+    <color name="colorSalmon">#FF8E7A</color>
+    <color name="colorOrange">#E8865D</color>
+    <color name="colorGreenBlue">#84FFC7</color>
+    <color name="colorGreen">#73EB92</color>
+    <color name="colorLightGreen">#DCFF84</color>
+    <color name="colorYellow">#FFEEA5</color>
 </resources>

@@ -18,43 +18,48 @@
 
     <EditText
         android:id="@+id/novoEvento_nome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="154dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginStart="54dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/novoEvento_descricao"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/novoEvento_descricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"
         android:ems="10"
+        android:hint="Descrição (opcional)"
         android:inputType="textMultiLine"
-        android:text="Descrição (opcional)"
-        app:layout_constraintStart_toStartOf="@+id/novoEvento_nome"
-        app:layout_constraintTop_toBottomOf="@+id/novoEvento_nome" />
+        app:layout_constraintBottom_toTopOf="@+id/novoEvento_ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/novoEvento_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
         android:text="Salvar"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/novoEvento_cancelar"
         app:layout_constraintStart_toStartOf="@+id/button" />
 
     <Button
         android:id="@+id/novoEvento_cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
         android:layout_marginEnd="2dp"
         android:text="Cancelar"
-        app:layout_constraintBaseline_toBaselineOf="@+id/novoEvento_ok"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/button" />
 
     <Button

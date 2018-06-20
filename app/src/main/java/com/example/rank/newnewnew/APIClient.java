@@ -1,4 +1,4 @@
-package com.example.rank.newnewnew.Rest;
+package com.example.rank.newnewnew;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -11,13 +11,12 @@ public class APIClient
 
     static Retrofit getClient()
     {
-
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         retrofit = new Retrofit.Builder()
-        .baseUrl("https://reqres.in")
+        .baseUrl(APIInterface.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build();

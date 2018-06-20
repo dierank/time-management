@@ -17,4 +17,12 @@
     <string name="title_activity_teste">TesteActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+
+    <!-- STRINGS LOGIN ACTIVITY -->
+    <string name="hint_email">Email</string>
+    <string name="hint_senha">Senha</string>
+    <string name="botao_login">Login</string>
+    <string name="checkbox_login">Manter conectado</string>
+    <string name="textView_registrar_login">Clique aqui para se registrar</string>
 </resources>
